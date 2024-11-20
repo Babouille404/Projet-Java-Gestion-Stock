@@ -1,10 +1,12 @@
+import java.util.Scanner;
+
 public class Produits {
     private String nomProduit;
     private double prixProduit;
     private int quantiteProduit;
 
     //Constructeur
-    public Produits (String nomProduit, double prixProduit, int quantiteProduit) {
+    public Produits(String nomProduit, double prixProduit, int quantiteProduit) {
         this.nomProduit = nomProduit;
         this.prixProduit = prixProduit;
         this.quantiteProduit = quantiteProduit;
@@ -39,6 +41,12 @@ public class Produits {
         System.out.println("Il reste " + quantiteProduit + "produits.");
     }
 
+    public static void main (String [] args) {
+        Produits p = new Produits("oui", 20, 10);
+
+        p.AfficherProduits("oui",20,10);
+
+    }
 
 
 
