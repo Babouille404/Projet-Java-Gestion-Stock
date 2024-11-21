@@ -5,9 +5,19 @@ import java.util.ArrayList;
 public class fournisseurs extends JFrame {
 
     private String identifiant;
+    private ArrayList<String> liste = new ArrayList<>();
 
-    public fournisseurs(String identifiant) {
-        this.identifiant = identifiant;
+
+
+//    public fournisseurs(String identifiant, ArrayList<String> liste) {
+//        this.identifiant = identifiant;
+//        this.liste = liste;
+//
+//    }
+
+
+    public ArrayList<String> getFournisseur() {
+        return liste;
     }
 
     public String getIdentifiant() {
@@ -19,46 +29,15 @@ public class fournisseurs extends JFrame {
     }
 
     public void Consulter() {
-        System.out.println("Voici les fournisseurs : " + identifiant);
+        System.out.println("Voici les fournisseurs : " + liste);
     }
 
-//    public void Ajouter(){
-//    ArrayList<String> fournisseurs = new ArrayList<>();
-//    fournisseurs.add(identifiant);
-//    Scanner sc = new Scanner(System.in);
-//    System.out.println("Veuillez entrer les fournisseurs : ");
-//    fournisseurs.add(sc.nextLine());
-//    }
-
-//    public static String[] Ajouter(String id){
-//        String [] test = new String[id];
-//        for (int i = 0; i < id; i++){
-//            Scanner sc = new Scanner(System.in);
-//            System.out.println("Vas-y dis moi tes fournisseurs ! " + i);
-//            test[i] = sc.nextLine();
-//        }
-//        return test;
-//
-//    }
-
-//    public static void Ajouter(){
-//        ArrayList<String> fournisseurs = new ArrayList<String>();
-//        System.out.println("Ajouter le fournisseur : ");
-//        Scanner sc = new Scanner(System.in);
-//        while (sc.hasNextLine()) {
-//            fournisseurs.add(sc.nextLine());
-//        }
-//        System.out.println(String.join(",", fournisseurs));
-//
-//    }
-
-    public static void Ajouter(){
-        ArrayList<String> fournisseurs = new ArrayList();
-        String input;
+    public void Ajouter(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ajouter le fournisseur : ");
-        input = sc.nextLine().toLowerCase();
-        fournisseurs.add(input);
+        System.out.println("Ajouter le fournisseur : " );
+        String input = sc.nextLine().toLowerCase();
+        liste.add(input);
+
 
 
        if (input.length() == 0){
@@ -75,9 +54,31 @@ public class fournisseurs extends JFrame {
        }
     }
 
+    public void Supprimer() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Lequel vous voulez supprimer ? ");
+        String input = sc.nextLine().toLowerCase();
+        liste.remove(input);
+
+    }
+
+    public void Modifier(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(liste);
+        System.out.println("Ecrire celui à modifier");
+        String input = sc.nextLine().toLowerCase();
+
+
+    }
+
     public static void main(String[] args) {
-    fournisseurs f = new fournisseurs("");
-    Ajouter();
+        fournisseurs f = new fournisseurs();
+        f.Ajouter();
+        f.Consulter();
+        f.Ajouter();
+        f.Consulter();
+        f.Modifier();
+        f.Consulter();
 
     }
 
