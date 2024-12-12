@@ -23,7 +23,7 @@ public class InterfaceTest extends JFrame {
         setResizable(false);
 
         //Dire à l'application de se fermer lorsqu'on clique sur la croix :
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         //Ajouter les boutons à l'interface
         setContentPane(Boutons());

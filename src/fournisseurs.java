@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.nio.channels.ClosedSelectorException;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.sql.Statement;
+import java.sql.*;
 
 public class fournisseurs extends JFrame {
 
@@ -80,7 +84,7 @@ public class fournisseurs extends JFrame {
         System.out.println("Tu es bien sûr de vouloir modifier celui là ? ");
         input = sc.nextLine().toLowerCase();
 
-        if (input.equalsIgnoreCase("yes")){
+        if (input.equalsIgnoreCase("oui")){
             System.out.println("Vas-y fais la modification !");
             int valeur = liste.indexOf(input);
             if (valeur != -1) {
@@ -93,7 +97,7 @@ public class fournisseurs extends JFrame {
                 System.out.println("L'élément n'a pas été trouvé dans la liste.");
             }
             System.out.println("La modification a bien été prise en compte ! ");
-        } else if (input.equalsIgnoreCase("no")) {
+        } else if (input.equalsIgnoreCase("non")) {
             System.out.println("Bon bah retour à la case départ :) ");
 
         }
@@ -102,14 +106,23 @@ public class fournisseurs extends JFrame {
     }
 
     public static void main(String[] args) {
-        fournisseurs f = new fournisseurs();
 
-        f.Ajouter();
-        f.Ajouter();
-        f.Ajouter();
-        f.Consulter();
-        f.Modifier();
-        f.Consulter();
+    try{
+        Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://127.0.0.1:3306/projetjava",
+                "root",
+                "user"
+        );
+
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM FOURNISSEUR");
+
+        while(resultSet.next()){
+            System.out.println(resultSet.getString("nomFournisseur"));
+        }
+    } catch (SQLException e){
+        e.printStackTrace();
+    }
 
     }
 
