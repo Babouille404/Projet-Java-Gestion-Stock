@@ -22,10 +22,14 @@ public class TestJFrame {
             public void run (){
 
                 //Créer une nouvelle instance de notre fenêtre :
-                InterfaceTest frame = new InterfaceTest();
+                InterfaceTest frameAccueil = new InterfaceTest();
 
                 //La rendre visible :
-                frame.setVisible(true);
+                frameAccueil.setVisible(true);
+
+                InterfaceTest frameProduits = new InterfaceTest();
+
+                frameAccueil.setVisible(true);
             }
         });
     }
