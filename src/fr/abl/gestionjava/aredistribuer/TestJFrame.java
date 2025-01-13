@@ -1,3 +1,5 @@
+package fr.abl.gestionjava.aredistribuer;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,3 +1,5 @@
+package fr.abl.gestionjava.aredistribuer;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;

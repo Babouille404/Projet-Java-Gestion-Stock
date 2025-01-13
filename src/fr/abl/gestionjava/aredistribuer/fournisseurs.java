@@ -1,4 +1,4 @@
-package test;
+package fr.abl.gestionjava.aredistribuer;
 
 import javax.swing.*;
 import java.sql.DriverManager;
