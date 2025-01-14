@@ -71,8 +71,7 @@ public class TestJFrame {
                 //Actions boutons
                 produitsBtn.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        cl.show(panelAccueil, "Produits");
-                    }
+                        cl.show(panelAccueil, "Produits");                    }
                 });
                 fournisseursBtn.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {

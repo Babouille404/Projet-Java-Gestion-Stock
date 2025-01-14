@@ -1,52 +1,71 @@
 package fr.abl.gestionjava.aredistribuer;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 
-public class InterfaceProduits extends JFrame {
+public class InterfaceProduits {
 
-    public InterfaceProduits() {
-        super();
-        //Initialisation de l'interface :
-        build();
+    public static void afficherPanelProduits() {
+
+        JPanel panelAccueil = new JPanel();
+        JPanel panelProduits = new JPanel();
+        CardLayout cl = new CardLayout();
+        panelAccueil.setLayout(cl);
+        cl.show(panelAccueil, "Produits");
+
+        JPanel panelButtonsProduits = new JPanel();
+        panelButtonsProduits.setLayout(new FlowLayout());
+
     }
 
-    private void build() {
-        //Donner un titre et une taille à l'interface
-        setTitle("Produits");
-        setSize(400, 400);
 
-        //Pour centrer l'interface sur l'écran (ne marche pas forcément si on a plusieurs écrans) :
-        setLocationRelativeTo(null);
 
-        //Interdire le redimensionnement de la fenêtre :
-        setResizable(false);
 
-        //Dire à l'application de se fermer lorsqu'on clique sur la croix :
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        //Ajouter les boutons à l'interface
-        setContentPane(Boutons());
-    }
-    //Pour créer les boutons
-    private JPanel Boutons() {
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
 
-        JButton AfficherBtn = new JButton("Afficher les produits");
-        panel.add(AfficherBtn);
 
-        JButton ModifierBtn = new JButton("Modifier un produit");
-        panel.add(ModifierBtn);
-
-        JButton SupprimerBtn = new JButton("Supprimer un produit");
-        panel.add(SupprimerBtn);
-
-        return panel;
-    }
+//    public InterfaceProduits() {
+//        super();
+//        //Initialisation de l'interface :
+//        build();
+//    }
+//
+//    private void build() {
+//        //Donner un titre et une taille à l'interface
+//        setTitle("Produits");
+//        setSize(400, 400);
+//
+//        //Pour centrer l'interface sur l'écran (ne marche pas forcément si on a plusieurs écrans) :
+//        setLocationRelativeTo(null);
+//
+//        //Interdire le redimensionnement de la fenêtre :
+//        setResizable(false);
+//
+//        //Dire à l'application de se fermer lorsqu'on clique sur la croix :
+//        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//
+//        //Ajouter les boutons à l'interface
+//        setContentPane(Boutons());
+//    }
+//    //Pour créer les boutons
+//    private JPanel Boutons() {
+//        JPanel panel = new JPanel();
+//        panel.setLayout(new FlowLayout());
+//
+//        JButton AfficherBtn = new JButton("Afficher les produits");
+//        panel.add(AfficherBtn);
+//
+//        JButton ModifierBtn = new JButton("Modifier un produit");
+//        panel.add(ModifierBtn);
+//
+//        JButton SupprimerBtn = new JButton("Supprimer un produit");
+//        panel.add(SupprimerBtn);
+//
+//        return panel;
+//    }
 }
 
