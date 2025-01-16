@@ -1,4 +1,4 @@
-package fr.abl.gestionjava.aredistribuer;
+package fr.abl.gestionjava.ui;
 
 import javax.swing.*;
 import java.awt.*;
