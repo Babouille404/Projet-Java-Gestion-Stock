@@ -116,6 +116,8 @@ public class TestJFrame {
                 CardLayout clFournisseurs = new CardLayout();
                 panelFournisseurs.setLayout(clFournisseurs);
 
+                panelFournisseurs.setLayout(new FlowLayout());
+
                 panelFournisseurs.add(addFournisseurs);
                 panelFournisseurs.add(delFournisseurs);
                 panelFournisseurs.add(updateFournisseurs);
