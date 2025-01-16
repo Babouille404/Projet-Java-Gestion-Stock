@@ -96,7 +96,7 @@ public class TestJFrame {
 
                 //Msg test
                 panelProduits.add(new JLabel("Panneau Produits", JLabel.CENTER), BorderLayout.CENTER);
-                panelFournisseurs.add(new JLabel("Fournisseurs", JLabel.CENTER), BorderLayout.CENTER);
+                //panelFournisseurs.add(new JLabel("Fournisseurs", JLabel.CENTER), BorderLayout.CENTER);
                 panelVentes.add(new JLabel("Panneau Ventes", JLabel.CENTER), BorderLayout.CENTER);
                 panelRapports.add(new JLabel("Panneau Rapports", JLabel.CENTER), BorderLayout.CENTER);
 
@@ -104,6 +104,28 @@ public class TestJFrame {
                 frame.add(panelAccueil);
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.setVisible(true);
+
+
+                //Partie Fournisseur
+                JButton addFournisseurs = new JButton("Ajouter");
+                JButton delFournisseurs = new JButton("Supprimer");
+                JButton updateFournisseurs = new JButton("Modifier");
+                JButton showFournisseurs = new JButton("Afficher");
+                JButton retourBtn = new JButton("Retour");
+
+                CardLayout clFournisseurs = new CardLayout();
+                panelFournisseurs.setLayout(clFournisseurs);
+
+                panelFournisseurs.add(addFournisseurs);
+                panelFournisseurs.add(delFournisseurs);
+                panelFournisseurs.add(updateFournisseurs);
+                panelFournisseurs.add(showFournisseurs);
+                panelFournisseurs.add(retourBtn);
+
+
+
+
+
 
             }
         });
