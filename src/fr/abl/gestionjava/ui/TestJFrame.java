@@ -113,11 +113,37 @@ public class TestJFrame {
                 JButton showFournisseurs = new JButton("Afficher");
                 JButton retourBtn = new JButton("Retour");
 
+                JLabel idLabelFournisseurs = new JLabel("ID : ");
+                JTextField idFournisseurs = new JTextField(10);
+                JLabel nameLabelFournisseurs = new JLabel("Nom : ");
+                JTextField nameFournisseurs = new JTextField(10);
+                JLabel adresseLabelFournisseurs = new JLabel("Adresse : ");
+                JTextField adresseFournisseurs = new JTextField(10);
+                JLabel telLabelFournisseurs = new JLabel("Tel : ");
+                JTextField telFournisseurs = new JTextField(10);
+                JLabel emailLabelFournisseurs = new JLabel("Email : ");
+                JTextField emailFournisseurs = new JTextField(10);
+
+
+
                 CardLayout clFournisseurs = new CardLayout();
                 panelFournisseurs.setLayout(clFournisseurs);
 
                 panelFournisseurs.setLayout(new FlowLayout());
 
+                //Zone de texte
+                panelFournisseurs.add(idLabelFournisseurs);
+                panelFournisseurs.add(idFournisseurs);
+                panelFournisseurs.add(nameLabelFournisseurs);
+                panelFournisseurs.add(nameFournisseurs);
+                panelFournisseurs.add(adresseLabelFournisseurs);
+                panelFournisseurs.add(adresseFournisseurs);
+                panelFournisseurs.add(telLabelFournisseurs);
+                panelFournisseurs.add(telFournisseurs);
+                panelFournisseurs.add(emailLabelFournisseurs);
+                panelFournisseurs.add(emailFournisseurs);
+
+                //Boutons
                 panelFournisseurs.add(addFournisseurs);
                 panelFournisseurs.add(delFournisseurs);
                 panelFournisseurs.add(updateFournisseurs);
@@ -125,6 +151,23 @@ public class TestJFrame {
                 panelFournisseurs.add(retourBtn);
 
 
+
+
+                addFournisseurs.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {}
+                });
+                delFournisseurs.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {}
+                });
+                updateFournisseurs.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {}
+                });
+                showFournisseurs.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {}
+                });
+                retourBtn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {cl.show(panelAccueil, "Accueil");}
+                });
 
 
 
