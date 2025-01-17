@@ -13,12 +13,28 @@ public class InterfaceProduits {
 
         JPanel panelAccueil = new JPanel();
         JPanel panelProduits = new JPanel();
+
         CardLayout cl = new CardLayout();
+
+        JButton btnRetour = new JButton("Retour à l'accueil");
+
         panelAccueil.setLayout(cl);
-        cl.show(panelAccueil, "Produits");
+
 
         JPanel panelButtonsProduits = new JPanel();
         panelButtonsProduits.setLayout(new FlowLayout());
+
+        panelButtonsProduits.add(btnRetour);
+
+        panelProduits.add(panelButtonsProduits, "Retour à l'accueil");
+
+        cl.show(panelAccueil, "Produits");
+
+        //Actions boutons
+        btnRetour.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                cl.show(panelAccueil, "Accueil");                    }
+        });
 
     }
 

@@ -95,7 +95,7 @@ public class TestJFrame {
                 panelRapports.setLayout(new BorderLayout());
 
                 //Msg test
-                panelProduits.add(new JLabel("Panneau Produits", JLabel.CENTER), BorderLayout.CENTER);
+                //panelProduits.add(new JLabel("Panneau Produits", JLabel.CENTER), BorderLayout.CENTER);
                 //panelFournisseurs.add(new JLabel("Fournisseurs", JLabel.CENTER), BorderLayout.CENTER);
                 panelVentes.add(new JLabel("Panneau Ventes", JLabel.CENTER), BorderLayout.CENTER);
                 panelRapports.add(new JLabel("Panneau Rapports", JLabel.CENTER), BorderLayout.CENTER);
@@ -104,6 +104,42 @@ public class TestJFrame {
                 frame.add(panelAccueil);
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.setVisible(true);
+
+                //Partie Produits
+                JButton addProduits = new JButton("Ajouter");
+                JButton delProduits = new JButton("Supprimer");
+                JButton updateProduits = new JButton("Modifier");
+                JButton showProduits = new JButton("Afficher");
+                JButton retourBtnProduits = new JButton("Retour à l'accueil");
+
+                CardLayout clProduits = new CardLayout();
+                panelProduits.setLayout(clProduits);
+
+                panelProduits.setLayout(new FlowLayout());
+
+                panelProduits.add(addProduits);
+                panelProduits.add(delProduits);
+                panelProduits.add(updateProduits);
+                panelProduits.add(showProduits);
+                panelProduits.add(retourBtnProduits);
+
+                retourBtnProduits.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        cl.show(panelAccueil, "Accueil");
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                 //Partie Fournisseur
