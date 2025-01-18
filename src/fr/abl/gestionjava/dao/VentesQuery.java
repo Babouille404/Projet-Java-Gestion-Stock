@@ -15,19 +15,21 @@ public class VentesQuery extends Component {
                     try {
     //connection a la base de données sql
                         Connection con =
-                                DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "root", "user");
+                                DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "admin", "admin");
 
     //requete sql
-                        String query = "insert into ventes (id-ventes, name_ventes) VALUES(?, ?)";
+                        String query = "insert into Ventes (id_ventes, name_ventes) VALUES(?, ?) " ;
                         PreparedStatement pstmt = con.prepareStatement(query);
 
     //Récupération des données saisies par l'utilisateur
                         int id = Integer.parseInt(idfield.getText());
-                        String name = namefield.getText();
+                        String nameVentes = namefield.getText();
+
+
 
     //Remplissage des paramètres de la requete SQL
                         pstmt.setInt(1, id);
-                        pstmt.setString(2, name);
+                        pstmt.setString(2, nameVentes);
 
     // Exécution de la requete SQL
                         int rowsAffected = pstmt.executeUpdate();

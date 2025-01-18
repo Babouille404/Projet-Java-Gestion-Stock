@@ -19,11 +19,11 @@ public void addFournisseur(Fournisseurs fournisseur) {
     try {
 // Connexion à la base de données
         Connection con =
-                DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "root",
-                        "user");
+                DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "admin",
+                        "admin");
 
 // Préparation de la requête SQL
-        String query = "INSERT INTO fournisseur (Id_Fournisseur, Nom_Fournisseur, Mail_Fournisseur, Addresse_Fournisseur, Num_Fournisseur) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO fournisseur (id_fournisseur, nom_fournisseur, mail_fournisseur, addresse_fournisseur, num_fournisseur) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement pstmt = con.prepareStatement(query);
 // Récupération des données saisies par l'utilisateur
         int id = Integer.parseInt(idField.getText());
@@ -54,10 +54,10 @@ public void addFournisseur(Fournisseurs fournisseur) {
     public void delFournisseur(Fournisseurs fournisseur) {
         try {
             // Connexion à la base de données
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/swing", "root", "user");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/swing", "admin", "admin");
 
             // Préparation de la requête SQL
-            String query = "DELETE FROM fournisseur WHERE Id_Fournisseur = ?";
+            String query = "DELETE FROM fournisseur WHERE id_fournisseur = ?";
             PreparedStatement pstmt = con.prepareStatement(query);
 
             // Récupération de l'ID saisi par l'utilisateur
@@ -92,11 +92,11 @@ public void addFournisseur(Fournisseurs fournisseur) {
         try {
 // Connexion à la base de données
             Connection con =
-                    DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "root",
-                            "user");
+                    DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "admin",
+                            "admin");
 
 // Préparation de la requête SQL
-            String query = "UPDATE INTO fournisseur (Id_Fournisseur, Nom_Fournisseur, Mail_Fournisseur, Addresse_Fournisseur, Num_Fournisseur) VALUES (?, ?, ?, ?, ?)";
+            String query = "UPDATE INTO Fournisseur (id_fournisseur, nom_fournisseur, mail_fournisseur, addresse_fournisseur, num_fournisseur) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = con.prepareStatement(query);
 // Récupération des données saisies par l'utilisateur
             int id = Integer.parseInt(idField.getText());

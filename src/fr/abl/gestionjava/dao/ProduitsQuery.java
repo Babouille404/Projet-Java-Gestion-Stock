@@ -16,11 +16,11 @@ public class ProduitsQuery extends Component {
     public void addProduit(Produits produits) {
         try {
             Connection con =
-                    DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "root", "root");
+                    DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "admin", "admin");
 
             // Préparation de la requête SQL
 
-            String query = "INSERT INTO Produits (Id_produit, nom_produit, prix_produit, qte_produit, fournisseur_produit) VALUES (?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Produits (id_produit, nom_produit, prix_produit, qte_produit, fournisseur_produit) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = con.prepareStatement(query);
 
             // Récupération des données saisies par l'utilisateur
