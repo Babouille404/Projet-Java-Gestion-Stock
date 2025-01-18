@@ -8,8 +8,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.JOptionPane;
 
 public class TestJFrame {
+
+    private JTextField textFieldTest;
+    private JButton buttonTest;
+
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -21,6 +30,8 @@ public class TestJFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run (){
@@ -111,7 +122,8 @@ public class TestJFrame {
                 JButton delFournisseurs = new JButton("Supprimer");
                 JButton updateFournisseurs = new JButton("Modifier");
                 JButton showFournisseurs = new JButton("Afficher");
-                JButton retourBtn = new JButton("Retour");
+                JButton retourBtnFournisseur = new JButton("Retour");
+                JButton ValidationTest = new JButton("Validation");
 
                 JLabel idLabelFournisseurs = new JLabel("ID : ");
                 JTextField idFournisseurs = new JTextField(10);
@@ -148,8 +160,11 @@ public class TestJFrame {
                 panelFournisseurs.add(delFournisseurs);
                 panelFournisseurs.add(updateFournisseurs);
                 panelFournisseurs.add(showFournisseurs);
-                panelFournisseurs.add(retourBtn);
+                panelFournisseurs.add(retourBtnFournisseur);
+                panelFournisseurs.add(ValidationTest);
 
+
+                //Action des boutons Fournisseurs
 
                 addFournisseurs.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {}
@@ -163,9 +178,35 @@ public class TestJFrame {
                 showFournisseurs.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {}
                 });
-                retourBtn.addActionListener(new ActionListener() {
+                retourBtnFournisseur.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {cl.show(panelAccueil, "Accueil");}
                 });
+
+
+
+
+                //Validation des données
+
+                String input = "";
+                input = JOptionPane.showInputDialog("Tu préfères moi ou ta mère");
+
+
+
+//                ValidationTest.addActionListener(new ActionListener() {
+//                    @Override
+//                    public void actionPerformed(ActionEvent e){
+//                        if (lenghtCheckValidate(telFournisseurs.getText())) {
+//                            JOptionPane.showMessageDialog(null, "Correct", "Validation input", JOptionPane.INFORMATION_MESSAGE);
+//                        }
+//                        else {
+//                            JOptionPane.showMessageDialog(null, "Incorrect", "Validation input", JOptionPane.ERROR_MESSAGE);
+//                        }
+//                    }
+//                });
+
+
+
+
 
 
                 //Partie Produits
@@ -173,6 +214,7 @@ public class TestJFrame {
                 JButton delProduits = new JButton("Supprimer");
                 JButton updateProduits = new JButton("Modifier");
                 JButton showProduits = new JButton("Afficher");
+                JButton retourBtnProduits = new JButton("Retour");
 
                 JLabel idLabelProduits = new JLabel("ID : ");
                 JTextField idProduits = new JTextField(10);
@@ -205,9 +247,19 @@ public class TestJFrame {
                 panelProduits.add(delProduits);
                 panelProduits.add(updateProduits);
                 panelProduits.add(showProduits);
-                panelProduits.add(retourBtn);
+                panelProduits.add(retourBtnProduits);
+
+
+                //Action des boutons Produits
+
+                retourBtnProduits.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {cl.show(panelAccueil, "Accueil");}
+                });
+
+
 
             }
+
         });
     }
 }
