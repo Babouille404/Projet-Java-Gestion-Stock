@@ -187,22 +187,18 @@ public class TestJFrame {
 
                 //Validation des données
 
-                String input = "";
-                input = JOptionPane.showInputDialog("Tu préfères moi ou ta mère");
-
-
-
-//                ValidationTest.addActionListener(new ActionListener() {
-//                    @Override
-//                    public void actionPerformed(ActionEvent e){
-//                        if (lenghtCheckValidate(telFournisseurs.getText())) {
-//                            JOptionPane.showMessageDialog(null, "Correct", "Validation input", JOptionPane.INFORMATION_MESSAGE);
-//                        }
-//                        else {
-//                            JOptionPane.showMessageDialog(null, "Incorrect", "Validation input", JOptionPane.ERROR_MESSAGE);
-//                        }
-//                    }
-//                });
+                ValidationTest.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String input = telFournisseurs.getText();
+                        if (input.length() == 10) {
+                            JOptionPane.showMessageDialog(frame, "C'est bon ! ");
+                        }
+                        else {
+                            JOptionPane.showMessageDialog(frame, "Il faut que ce soit 10 caractères ! ");
+                        }
+                    }
+                });
 
 
 
