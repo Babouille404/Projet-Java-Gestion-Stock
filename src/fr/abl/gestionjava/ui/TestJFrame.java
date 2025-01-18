@@ -105,42 +105,6 @@ public class TestJFrame {
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.setVisible(true);
 
-                //Partie Produits
-                JButton addProduits = new JButton("Ajouter");
-                JButton delProduits = new JButton("Supprimer");
-                JButton updateProduits = new JButton("Modifier");
-                JButton showProduits = new JButton("Afficher");
-                JButton retourBtnProduits = new JButton("Retour à l'accueil");
-
-                CardLayout clProduits = new CardLayout();
-                panelProduits.setLayout(clProduits);
-
-                panelProduits.setLayout(new FlowLayout());
-
-                panelProduits.add(addProduits);
-                panelProduits.add(delProduits);
-                panelProduits.add(updateProduits);
-                panelProduits.add(showProduits);
-                panelProduits.add(retourBtnProduits);
-
-                retourBtnProduits.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        cl.show(panelAccueil, "Accueil");
-                    }
-                });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 //Partie Fournisseur
                 JButton addFournisseurs = new JButton("Ajouter");
@@ -187,8 +151,6 @@ public class TestJFrame {
                 panelFournisseurs.add(retourBtn);
 
 
-
-
                 addFournisseurs.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {}
                 });
@@ -206,7 +168,44 @@ public class TestJFrame {
                 });
 
 
+                //Partie Produits
+                JButton addProduits = new JButton("Ajouter");
+                JButton delProduits = new JButton("Supprimer");
+                JButton updateProduits = new JButton("Modifier");
+                JButton showProduits = new JButton("Afficher");
 
+                JLabel idLabelProduits = new JLabel("ID : ");
+                JTextField idProduits = new JTextField(10);
+                JLabel nomLabelProduits = new JLabel("Nom : ");
+                JTextField nomProduits = new JTextField(20);
+                JLabel prixLabelProduits = new JLabel("Prix : ");
+                JTextField prixProduits = new JTextField(10);
+                JLabel qteLabelProduits = new JLabel("Quantité : ");
+                JTextField qteProduits = new JTextField(4);
+                JLabel fournisseursLabelProduits = new JLabel("Fournisseur : ");
+                JTextField fournisseursProduits = new JTextField(20);
+
+                CardLayout clProduits = new CardLayout();
+                panelProduits.setLayout(clProduits);
+
+                panelProduits.setLayout(new FlowLayout());
+
+                panelProduits.add(idLabelProduits);
+                panelProduits.add(idProduits);
+                panelProduits.add(nomLabelProduits);
+                panelProduits.add(nomProduits);
+                panelProduits.add(prixLabelProduits);
+                panelProduits.add(prixProduits);
+                panelProduits.add(qteLabelProduits);
+                panelProduits.add(qteProduits);
+                panelProduits.add(fournisseursLabelProduits);
+                panelProduits.add(fournisseursProduits);
+
+                panelProduits.add(addProduits);
+                panelProduits.add(delProduits);
+                panelProduits.add(updateProduits);
+                panelProduits.add(showProduits);
+                panelProduits.add(retourBtn);
 
             }
         });
