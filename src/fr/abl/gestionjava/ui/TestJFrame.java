@@ -59,6 +59,7 @@ public class TestJFrame {
                 JButton fournisseursBtn = new JButton("Fournisseurs");
                 JButton ventesBtn = new JButton("Ventes");
                 JButton rapportsBtn = new JButton("Rapports");
+                JButton quitterBtn = new JButton("Quitter l'application");
 
                 CardLayout cl = new CardLayout();
                 panelAccueil.setLayout(cl);
@@ -70,6 +71,7 @@ public class TestJFrame {
                 panelButtonsAccueil.add(fournisseursBtn);
                 panelButtonsAccueil.add(ventesBtn);
                 panelButtonsAccueil.add(rapportsBtn);
+                panelButtonsAccueil.add(quitterBtn);
 
                 panelAccueil.add(panelButtonsAccueil, "Accueil");
                 panelAccueil.add(panelProduits, "Produits");
@@ -98,6 +100,10 @@ public class TestJFrame {
                     public void actionPerformed(ActionEvent e) {
                         cl.show(panelAccueil, "Rapports");
                     }
+                });
+                quitterBtn.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) { System.exit(0); }
+
                 });
 
                 panelProduits.setLayout(new BorderLayout());

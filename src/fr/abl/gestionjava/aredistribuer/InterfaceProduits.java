@@ -1,50 +1,50 @@
-package fr.abl.gestionjava.aredistribuer;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-
-
-public class InterfaceProduits {
-
-    public static void afficherPanelProduits() {
-
-        JPanel panelAccueil = new JPanel();
-        JPanel panelProduits = new JPanel();
-
-        CardLayout cl = new CardLayout();
-
-        JButton btnRetour = new JButton("Retour à l'accueil");
-
-        panelAccueil.setLayout(cl);
-
-
-        JPanel panelButtonsProduits = new JPanel();
-        panelButtonsProduits.setLayout(new FlowLayout());
-
-        panelButtonsProduits.add(btnRetour);
-
-        panelProduits.add(panelButtonsProduits, "Retour à l'accueil");
-
-        cl.show(panelAccueil, "Produits");
-
-        //Actions boutons
-        btnRetour.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                cl.show(panelAccueil, "Accueil");                    }
-        });
-
-    }
-
-
-
-
-
-
-
-//    public InterfaceProduits() {
+//package fr.abl.gestionjava.aredistribuer;
+//
+//import javax.swing.*;
+//import java.awt.*;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+//
+//
+//
+//public class InterfaceProduits {
+//
+//    public static void afficherPanelProduits() {
+//
+//        JPanel panelAccueil = new JPanel();
+//        JPanel panelProduits = new JPanel();
+//
+//        CardLayout cl = new CardLayout();
+//
+//        JButton btnRetour = new JButton("Retour à l'accueil");
+//
+//        panelAccueil.setLayout(cl);
+//
+//
+//        JPanel panelButtonsProduits = new JPanel();
+//        panelButtonsProduits.setLayout(new FlowLayout());
+//
+//        panelButtonsProduits.add(btnRetour);
+//
+//        panelProduits.add(panelButtonsProduits, "Retour à l'accueil");
+//
+//        cl.show(panelAccueil, "Produits");
+//
+//        //Actions boutons
+//        btnRetour.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                cl.show(panelAccueil, "Accueil");                    }
+//        });
+//
+//    }
+//
+//
+//
+//
+//
+//
+//
+////    public InterfaceProduits() {
 //        super();
 //        //Initialisation de l'interface :
 //        build();
@@ -83,5 +83,5 @@ public class InterfaceProduits {
 //
 //        return panel;
 //    }
-}
+//}
 
