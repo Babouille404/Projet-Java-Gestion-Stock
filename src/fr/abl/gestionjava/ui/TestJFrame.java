@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.JOptionPane;
+import javax.swing.text.AbstractDocument;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
@@ -32,9 +33,8 @@ public class TestJFrame {
         }
 
 
-
         SwingUtilities.invokeLater(new Runnable() {
-            public void run (){
+            public void run() {
 
                 //Fenêtre principale
                 JFrame frame = new JFrame("Gestionnaire de stocks");
@@ -84,7 +84,8 @@ public class TestJFrame {
                 //Actions boutons
                 produitsBtn.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        cl.show(panelAccueil, "Produits");                    }
+                        cl.show(panelAccueil, "Produits");
+                    }
                 });
                 fournisseursBtn.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -102,7 +103,9 @@ public class TestJFrame {
                     }
                 });
                 quitterBtn.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) { System.exit(0); }
+                    public void actionPerformed(ActionEvent e) {
+                        System.exit(0);
+                    }
 
                 });
 
@@ -143,7 +146,6 @@ public class TestJFrame {
                 JTextField emailFournisseurs = new JTextField(10);
 
 
-
                 CardLayout clFournisseurs = new CardLayout();
                 panelFournisseurs.setLayout(clFournisseurs);
 
@@ -173,22 +175,26 @@ public class TestJFrame {
                 //Action des boutons Fournisseurs
 
                 addFournisseurs.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {}
+                    public void actionPerformed(ActionEvent e) {
+                    }
                 });
                 delFournisseurs.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {}
+                    public void actionPerformed(ActionEvent e) {
+                    }
                 });
                 updateFournisseurs.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {}
+                    public void actionPerformed(ActionEvent e) {
+                    }
                 });
                 showFournisseurs.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {}
+                    public void actionPerformed(ActionEvent e) {
+                    }
                 });
                 retourBtnFournisseur.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {cl.show(panelAccueil, "Accueil");}
+                    public void actionPerformed(ActionEvent e) {
+                        cl.show(panelAccueil, "Accueil");
+                    }
                 });
-
-
 
 
                 //Validation des données
@@ -199,30 +205,15 @@ public class TestJFrame {
                         String input = telFournisseurs.getText();
                         if (input.length() == 10) {
                             JOptionPane.showMessageDialog(frame, "C'est bon ! ");
-                        }
-                        else {
+                        } else {
                             JOptionPane.showMessageDialog(frame, "Il faut que ce soit 10 caractères ! ");
                         }
                     }
                 });
 
-//                integerField.getDocument().setDocumentFilter(new IntegerDocumentFilter());
-//
-//                private boolean isInteger(String texte) {
-//                    return texte.matches("");
-//                }
-//
-//                class IntegerDocumentFilter extends DocumentFilter {
-//                    @Override
-//                    public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
-//                        if (isInteger(String texte)) {
-//                            super.insertString(fb, offset, string, attr);
-//                        }
-//                    }
-//                }
+                //Forcer l'input de l'int dans tel
 
-
-
+                ((AbstractDocument) telFournisseurs.getDocument()).setDocumentFilter(new IntegerDocumentFilter());
 
 
                 //Partie Produits
@@ -269,13 +260,38 @@ public class TestJFrame {
                 //Action des boutons Produits
 
                 retourBtnProduits.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {cl.show(panelAccueil, "Accueil");}
+                    public void actionPerformed(ActionEvent e) {
+                        cl.show(panelAccueil, "Accueil");
+                    }
                 });
-
 
 
             }
 
         });
+
+        //Filtre pour forcer int
+
+        class IntegerDocumentFilter extends DocumentFilter {
+            @Override
+            public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
+                if (isInteger(string)) {
+                    super.insertString(fb, offset, string, attr);
+                }
+            }
+
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+                if (isInteger(text)) {
+                    super.replace(fb, offset, length, text, attrs);
+                }
+            }
+
+
+            private boolean isInteger(String text) {
+                return text.matches("-?\\d*");
+            }
+
+        }
     }
 }
