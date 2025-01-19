@@ -1,5 +1,7 @@
 package fr.abl.gestionjava.dao;
 
+import fr.abl.gestionjava.model.Ventes;
+
 import javax.swing.*;
 import java.awt.*;
 import java.sql.Connection;
@@ -11,14 +13,14 @@ public class VentesQuery extends Component {
         private JTextField idfield;
         private JTextField namefield;
 
-                public void addVentes() {
+                public void addVentes(Ventes vente) {
                     try {
     //connection a la base de données sql
                         Connection con =
                                 DriverManager.getConnection("jdbc:mysql://localhost:3306/projetjava", "admin", "admin");
 
     //requete sql
-                        String query = "insert into Ventes (id_ventes, name_ventes) VALUES(?, ?) " ;
+                        String query = "insert into Ventes (id_ventes, name_ventes) VALUES(?, ?)  "  ;
                         PreparedStatement pstmt = con.prepareStatement(query);
 
     //Récupération des données saisies par l'utilisateur
