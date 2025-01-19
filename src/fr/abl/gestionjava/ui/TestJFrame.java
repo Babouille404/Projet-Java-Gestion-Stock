@@ -13,11 +13,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.JOptionPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 public class TestJFrame {
-
-    private JTextField textFieldTest;
-    private JButton buttonTest;
 
     public static void main(String[] args) {
         try {
@@ -200,6 +200,20 @@ public class TestJFrame {
                     }
                 });
 
+//                integerField.getDocument().setDocumentFilter(new IntegerDocumentFilter());
+//
+//                private boolean isInteger(String texte) {
+//                    return texte.matches("");
+//                }
+//
+//                class IntegerDocumentFilter extends DocumentFilter {
+//                    @Override
+//                    public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
+//                        if (isInteger(String texte)) {
+//                            super.insertString(fb, offset, string, attr);
+//                        }
+//                    }
+//                }
 
 
 
